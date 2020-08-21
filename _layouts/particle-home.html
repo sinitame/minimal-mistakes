@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{% assign author = page.author | default: page.authors[0] | default: site.author %}
+{% assign author = site.data.authors[author] | default: author %}
+
 <!-- particles.js container -->
 <div id="particles-js"></div>
 
@@ -13,11 +16,20 @@ layout: default
     </div>
     <div class= "tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
       {{ content }}
+      {% if author.links %}
       <div class="tm-social-icons-container text-sm-center">
+      {% for link in author.links %}
+        {% if link.label %}
+          <a href="{{ link.url }}" class="tm-social-link" target="_blank"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i></a>
+        {% endif %}
+      {% endfor %}
+        <!--
         <a href="https://github.com/sinitame" class="tm-social-link" target="_blank"><i class="fa fa-github" ></i></a>
         <a href="https://www.linkedin.com/in/emricksinitambirivoutin/" class="tm-social-link" target="_blank"><i class="fa fa-linkedin"></i></a>
         <a href="https://twitter.com/emricksini" class="tm-social-link" target="_blank"><i class="fa fa-twitter"></i></a>
+        -->
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
