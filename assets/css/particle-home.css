@@ -23,6 +23,7 @@
 .tm-content img {
   height: 300px;
   width: 300px;
+  border: 5px solid #f2f3f3;
 }
 
 .tm-social-icons-container {
