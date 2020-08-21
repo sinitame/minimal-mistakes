@@ -9,7 +9,7 @@
   animation: $intro-transition;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
-  z-index: 20;
+  z-index: 1002;
 
   &__inner-wrap {
     @include clearfix;
@@ -30,7 +30,7 @@
     }
 
     nav {
-      z-index: 1001;
+      z-index: 10;
     }
 
     a {
